@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reddit Scraper</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="container">
+    <h3 class="header">Reddit /r/WebDevs Scraper</h3>
+    <div id="buttons">
+      <button class="btn" id="home">Home</button>
+      <button class="btn" id="scrape">Scrape Reddit</button>
+      <button class="btn" id="view-saved">View Saved</button>
+      <button class="btn" id="clear-db">Clear Posts</button>
+    </div>
+    <table id="results">
+      <thead>
+        <tr>
+          <th id="animal-name">Title</th>
+          <th id="animal-legs">Link</th>
+          <th id="animal-legs">Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Results from DB here -->
+      </tbody>
+    </table>
+    <script src="index.js"></script>
+  </body>
+</html>
