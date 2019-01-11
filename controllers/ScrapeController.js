@@ -1,10 +1,15 @@
+// Require the models
 const db = require("../models");
+//Require axios
 const axios = require("axios");
+//Require cheerio
 const cheerio = require("cheerio");
-const mongoose = require("mongoose");
+
 module.exports = {
+  //When scrape is ran, it goes the the subreddit page for webdevs and scrapes all the articles
+  //on the main page. For each article, i assign its title and link to result.title and
+  //result.link. We then create a post with the result object we created
   Scrape: function(req, res) {
-    let results = [];
     axios.get("https://www.reddit.com/r/webdev/").then(function(response) {
       const $ = cheerio.load(response.data);
 
@@ -28,10 +33,8 @@ module.exports = {
             // If an error occurred, log it
             console.log(err);
           });
-
-        results.push(result);
       });
-
+      //We then send back that the post have been scraped
       res.send("Post Scraped");
     });
   }

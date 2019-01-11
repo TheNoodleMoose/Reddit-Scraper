@@ -1,6 +1,8 @@
+//Require the models folder
 const db = require("../models");
-const mongoose = require("mongoose");
+
 module.exports = {
+  // When SavePost is ran, we find a post by its id and update its saved value to true
   SavePost: function(req, res) {
     db.Post.findByIdAndUpdate(
       req.params.id,

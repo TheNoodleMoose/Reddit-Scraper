@@ -1,6 +1,8 @@
+// Require the models folder
 const db = require("../models");
-const mongoose = require("mongoose");
+
 module.exports = {
+  // When ClearDB is ran we find all the post and delete everything
   ClearDB: function(req, res) {
     db.Post.deleteMany({})
       .then(dbPost => {
